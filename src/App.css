@@ -1,0 +1,46 @@
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+
+h1, h2 {
+  color: blue;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.learn-more-link {
+  display: inline-block;
+  background-color: #007bff; 
+  color: #fff;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none; 
+  border: none;
+  border-radius: 10px; 
+  cursor: pointer; 
+  margin: 20px 0; 
+}
+
+.learn-more-link:hover {
+  background-color: #0056b3;
+}
+
+body {
+  background-image: url('https://as1.ftcdn.net/v2/jpg/02/63/40/02/1000_F_263400204_7k7rh0GjnWUYGEpLuyMu2E6dlywln34k.jpg');
+  background-size: cover;
+  transition: background-image 0.5s ease-in-out;
+}
