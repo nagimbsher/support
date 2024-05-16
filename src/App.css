@@ -1,51 +1,47 @@
 body {
-  background-image: url('https://as1.ftcdn.net/v2/jpg/02/63/40/02/1000_F_263400204_7k7rh0GjnWUYGEpLuyMu2E6dlywln34k.jpg');
-  background-size: cover;
-  transition: background-image 0.5s ease-in-out;
   margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
+  background-image: url('https://source.unsplash.com/random/1920x1080');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Full viewport height */
   text-align: center;
-  padding-top: 70px; /* Padding to accommodate the fixed navbar */
-  box-sizing: border-box;
+  padding: 20px;
 }
 
-.icon-container svg {
-  color: blue;
-  font-size: 70px;
-  margin-bottom: 30px;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.navbar h3 {
+  margin: 0;
 }
 
 .heading {
-  color: white;
-  margin-bottom: 20px;
-  animation-name: slideIn;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+  margin: 0;
+  font-size: 1.2em;
 }
 
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.navbar-icon {
+  font-size: 1.5em;
+}
+
+.icon-container {
+  margin: 20px 0;
 }
 
 .learn-more-link {
   display: inline-block;
-  background-color: #007bff;
+  background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 15px 30px;
   text-align: center;
@@ -54,105 +50,10 @@ body {
   border-radius: 10px;
   cursor: pointer;
   margin: 10px 0;
-  width: 80%; /* Make the button width responsive */
+  width: 80%; 
 }
+
 
 .learn-more-link:hover {
-  background-color: #0056b3;
+  background-color: rgba(0, 0, 0, 0.8);
 }
-
-.navbar {
-  width: 100%;
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar h3 {
-  margin: 0;
-  font-size: 30px; /* Adjusted for responsiveness */
-  padding: 5px;
-}
-
-.navbar .navbar-icon {
-  font-size: 30px; /* Adjusted for responsiveness */
-  padding: 5px;
-}
-
-/* Media Queries for Smaller Screens */
-@media (max-width: 600px) {
-  .navbar h3 {
-    font-size: 20px; /* Smaller font size for small screens */
-  }
-
-  .navbar .navbar-icon {
-    font-size: 20px; /* Smaller font size for small screens */
-  }
-
-  .learn-more-link {
-    padding: 10px 20px; /* Adjust padding for smaller screens */
-    font-size: 14px; /* Smaller font size for buttons */
-  }
-}
-
-/* .navbar .navbar-icon {
-  font-size: 50px;
-  
-} */
-
-
-/* .heading {
-  text-align: center;
-  margin-bottom: 20px;
-  animation-name: slideIn;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-}
-
-
-h1, h2 {
-  color: blue;
-}
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.learn-more-link {
-  display: inline-block;
-  background-color: #007bff; 
-  color: #fff;
-  padding: 15px 30px;
-  text-align: center;
-  text-decoration: none; 
-  border: none;
-  border-radius: 10px; 
-  cursor: pointer; 
-  margin: 20px 0; 
-}
-
-.learn-more-link:hover {
-  background-color: #0056b3;
-}
-
-body {
-  background-image: url('https://as1.ftcdn.net/v2/jpg/02/63/40/02/1000_F_263400204_7k7rh0GjnWUYGEpLuyMu2E6dlywln34k.jpg');
-  background-size: cover;
-  transition: background-image 0.5s ease-in-out;
-} */
