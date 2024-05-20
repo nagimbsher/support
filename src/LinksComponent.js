@@ -9,7 +9,7 @@ const LinksComponent = () => {
       <div className="navbar">
         <h3>اهلا وسهلا</h3>
         <h2 className="heading">
-        للمساعدة اتصل على نجم<a href="tel:0545946241">0545946241</a>
+          للمساعدة اتصل على نجم<a href="tel:0545946241">0545946241</a>
         </h2>
         <FontAwesomeIcon icon={faHandshake} className="navbar-icon" />
       </div>
@@ -20,6 +20,7 @@ const LinksComponent = () => {
       <button className="learn-more-link" onClick={() => window.open("https://www.gov.il/ar/service/apply_for_new_driver_drivers_license", "_blank")} rel="noopener noreferrer">الحصول على رخصة قيادة/ توفس يروك</button>
       <button className="learn-more-link" onClick={() => window.open("https://www.theorytest.org.il/", "_blank")} rel="noopener noreferrer">‏حجز دور للامتحان / حجز دور للتؤوريا</button>
       <button className="learn-more-link" onClick={() => window.open("https://ecom.gov.il/voucherspa/input/209?language=ar", "_blank")} rel="noopener noreferrer">تجديد رخصة القيادة او استخراج الرخصة بعد نجاح</button>
+      <button className="learn-more-link" onClick={() => window.open("https://www.evisa.gov.et/", "_blank")} rel="noopener noreferrer">التقدم طلب  للحصول على تأشيرة إثيوبية</button>
     </div>
   );
 }
