@@ -57,3 +57,18 @@ body {
 .learn-more-link:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the video container horizontally */
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+}

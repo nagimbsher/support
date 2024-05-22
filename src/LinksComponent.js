@@ -21,6 +21,11 @@ const LinksComponent = () => {
       <button className="learn-more-link" onClick={() => window.open("https://www.theorytest.org.il/", "_blank")} rel="noopener noreferrer">‏حجز دور للامتحان / حجز دور للتؤوريا</button>
       <button className="learn-more-link" onClick={() => window.open("https://ecom.gov.il/voucherspa/input/209?language=ar", "_blank")} rel="noopener noreferrer">تجديد رخصة القيادة او استخراج الرخصة بعد نجاح</button>
       <button className="learn-more-link" onClick={() => window.open("https://www.evisa.gov.et/", "_blank")} rel="noopener noreferrer">التقدم طلب  للحصول على تأشيرة إثيوبية</button>
+      <div className="video-container">
+        <video controls className="video">
+          <source src={require('./visa6.mp4')} type="video/mp4" />
+        </video>
+        </div>
     </div>
   );
 }
