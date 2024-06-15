@@ -1,10 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url('https://source.unsplash.com/random/1920x1080');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #4CAF50; /* Default background color */
   color: #fff;
 }
 
@@ -20,6 +17,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .navbar h3 {
@@ -50,9 +48,8 @@ body {
   border-radius: 10px;
   cursor: pointer;
   margin: 10px 0;
-  width: 80%; 
+  width: 80%;
 }
-
 
 .learn-more-link:hover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -61,8 +58,8 @@ body {
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 800px; 
-  margin: 0 auto; 
+  max-width: 800px;
+  margin: 20px auto;
 }
 
 .video {
@@ -70,5 +67,5 @@ body {
   height: auto;
   display: block;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
