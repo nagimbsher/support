@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #4CAF50; /* Default background color */
+  background-color: #4CAF50;
   color: #fff;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 .navbar-icon {
-  font-size: 1.5em;
+  font-size: 3.5em;
 }
 
 .icon-container {
@@ -49,10 +49,24 @@ body {
   cursor: pointer;
   margin: 10px 0;
   width: 80%;
+  font-size: 2.5em; 
 }
 
 .learn-more-link:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.help-link {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 0;
 }
 
 .video-container {
