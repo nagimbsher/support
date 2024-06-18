@@ -1,13 +1,20 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: yellow; 
-  color: #fff;
+  font-family: 'Open Sans', Arial, sans-serif; 
+  background: linear-gradient(to right, #f9e8b4, #f9d423); 
+  color: #333; 
 }
 
 .container {
   text-align: center;
   padding: 20px;
+}
+
+.nav-utilities {
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+  padding-bottom: 10px;
 }
 
 .navbar {
@@ -22,16 +29,16 @@ body {
 
 .navbar h3 {
   margin: 0;
+  font-weight: normal; 
 }
 
 .heading {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .navbar-icon {
-  font-size: 1.5em;
-}
+  font-size: 2em;}
 
 .icon-container {
   margin: 20px 0;
@@ -41,7 +48,7 @@ body {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
-  padding: 15px 30px;
+  padding: 10px 25px; 
   text-align: center;
   text-decoration: none;
   border: none;
@@ -49,10 +56,11 @@ body {
   cursor: pointer;
   margin: 10px 0;
   width: 80%;
+  transition: background-color 0.3s; 
 }
 
 .learn-more-link:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8); 
 }
 
 .video-container {
@@ -70,22 +78,22 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Design */
+
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; 
   }
 
   .learn-more-link {
-    width: 100%;
+    width: 100%; 
   }
 
   .navbar h3, .heading {
-    font-size: 1em;
+    font-size: 1em; 
   }
 
   .navbar-icon {
-    font-size: 1.2em;
+    font-size: 1.5em; 
   }
 }

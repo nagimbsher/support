@@ -16,10 +16,8 @@ const LinksComponent = () => {
       document.body.style.backgroundColor = getRandomColor();
     };
 
-    // Add event listener
     document.addEventListener('click', handleClick);
 
-    // Clean up event listener on component unmount
     return () => {
       document.removeEventListener('click', handleClick);
     };
@@ -39,6 +37,7 @@ const LinksComponent = () => {
         حجز دور للهويه او جواز سفر
       </button>
       <button 
+      
         className="learn-more-link" 
         onClick={() => window.open("https://www.btl.gov.il/%D7%98%D7%A4%D7%A1%D7%99%D7%9D%20%D7%95%D7%90%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D/forms/insurance_forms/Pages/625%20-%20%D7%A9%D7%90%D7%9C%D7%95%D7%9F%20%D7%9C%D7%A7%D7%91%D7%99%D7%A2%D7%AA%20%D7%AA%D7%95%D7%A9%D7%91%D7%95%D7%AA%20-%20%D7%91%D7%A2%D7%9C%D7%99%20%D7%90%D7%A9%D7%A8%D7%94%20%D7%9C%D7%AA%D7%95%D7%A9%D7%91%20%D7%90%D7%A8%D7%A2%D7%99.aspx", "_blank")} 
         rel="noopener noreferrer">
@@ -84,6 +83,6 @@ const LinksComponent = () => {
       </div>
     </div>
   );
-}
+};
 
 export default LinksComponent;
