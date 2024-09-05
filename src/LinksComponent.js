@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandshake } from '@fortawesome/free-solid-svg-icons';
 import { getRandomColor } from './utils/colorUtils';
-import Modal from './Modal';
 import './App.css';
 
 const LinksComponent = () => {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleShowModal = () => setShowModal(true);
-  const handleCloseModal = () => setShowModal(false);
 
   useEffect(() => {
     const handleClick = () => {
@@ -37,7 +33,6 @@ const LinksComponent = () => {
         حجز دور للهويه او جواز سفر
       </button>
       <button 
-      
         className="learn-more-link" 
         onClick={() => window.open("https://www.btl.gov.il/%D7%98%D7%A4%D7%A1%D7%99%D7%9D%20%D7%95%D7%90%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D/forms/insurance_forms/Pages/625%20-%20%D7%A9%D7%90%D7%9C%D7%95%D7%9F%20%D7%9C%D7%A7%D7%91%D7%99%D7%A2%D7%AA%20%D7%AA%D7%95%D7%A9%D7%91%D7%95%D7%AA%20-%20%D7%91%D7%A2%D7%9C%D7%99%20%D7%90%D7%A9%D7%A8%D7%94%20%D7%9C%D7%AA%D7%95%D7%A9%D7%91%20%D7%90%D7%A8%D7%A2%D7%99.aspx", "_blank")} 
         rel="noopener noreferrer">
@@ -68,19 +63,9 @@ const LinksComponent = () => {
         التقدم طلب  للحصول على تأشيرة إثيوبية
       </button>
       <br />
-      <button className="help-link" onClick={handleShowModal}>
-        <h2 className="heading">
-          للمساعدة اتصل على نجم<a href="tel:0545946241">0545946241</a>
-        </h2>
-      </button>
-      <Modal show={showModal} handleClose={handleCloseModal}>
-        <p>للمساعدة اتصل على نجم<a href="tel:0545946241">0545946241</a></p>
-      </Modal>
-      <div className="video-container">
-        <video controls className="video">
-          <source src={require('./visa6.mp4')} type="video/mp4" />
-        </video>
-      </div>
+      <footer>
+        <Link to="/privacy-policy">Privacy Policy</Link> 
+      </footer>
     </div>
   );
 };

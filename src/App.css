@@ -97,3 +97,33 @@ body {
     font-size: 1.5em; 
   }
 }
+
+.privacy-policy {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.privacy-policy h1 {
+  text-align: center;
+}
+
+.privacy-policy h2 {
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.privacy-policy p {
+  line-height: 1.6;
+}
+
+.privacy-policy a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.privacy-policy a:hover {
+  text-decoration: underline;
+}
