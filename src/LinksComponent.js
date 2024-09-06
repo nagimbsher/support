@@ -79,9 +79,6 @@ const LinksComponent = () => {
 
       <footer>
         <Link to="/privacy-policy">Privacy Policy</Link>
-        <br />
-        
-        <Link to="/contact-me">Contact Me</Link>
       </footer>
     </div>
   );

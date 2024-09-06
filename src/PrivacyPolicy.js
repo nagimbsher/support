@@ -1,9 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
-  const navigate = useNavigate(); 
-
   return (
     <div className="privacy-policy">
       <h1>Privacy Policy</h1>
@@ -20,12 +17,20 @@ const PrivacyPolicy = () => {
       </p>
       <h2>Contact Us</h2>
       <p>
-        If you have any questions about this privacy policy, you can contact us at <a href="mailto:support@example.com">support@example.com</a> or visit our <a href="https://nagimbsher.github.io/support/" target="_blank" rel="noopener noreferrer">Support Page</a>.
+        If you have any questions about this privacy policy, you contact us at:
+        <li>Email: <a href="mailto:support@example.com">support@example.com</a></li>
+       
       </p>
-
-      <button onClick={() => navigate(-1)} className="back-button">
-        Back
-      </button>
+      <p>
+        Alternatively, you can contact us directly:
+      </p>
+      <ul>
+        <li>Email: <a href="mailto:nagimbasher@gmail.com">nagimbasher@gmail.com</a></li>
+        <a href="https://nagimbsher.github.io/support/" target="_blank" rel="noopener noreferrer">
+          https://nagimbsher.github.io/support/
+        </a>
+        <li>WhatsApp: <a href="https://wa.me/972545946241" target="_blank" rel="noopener noreferrer">+972545946241</a></li>
+      </ul>
     </div>
   );
 };
