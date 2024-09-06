@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
+  const navigate = useNavigate(); 
+
   return (
     <div className="privacy-policy">
       <h1>Privacy Policy</h1>
@@ -19,6 +22,10 @@ const PrivacyPolicy = () => {
       <p>
         If you have any questions about this privacy policy, you can contact us at <a href="mailto:support@example.com">support@example.com</a> or visit our <a href="https://nagimbsher.github.io/support/" target="_blank" rel="noopener noreferrer">Support Page</a>.
       </p>
+
+      <button onClick={() => navigate(-1)} className="back-button">
+        Back
+      </button>
     </div>
   );
 };
