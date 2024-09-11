@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandshake } from '@fortawesome/free-solid-svg-icons';
 import { getRandomColor } from './utils/colorUtils';
+
 import './App.css';
 
 const LinksComponent = () => {
