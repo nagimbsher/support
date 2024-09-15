@@ -26,8 +26,11 @@ const LinksComponent = () => {
         <h3>اهلا وسهلا</h3>
         <FontAwesomeIcon icon={faHandshake} className="navbar-icon" />
       </div>
+
       <div className="icon-container"></div>
-      
+
+     
+
       <button 
         className="learn-more-link" 
         aria-label="Schedule an appointment for ID or passport" 
@@ -76,6 +79,18 @@ const LinksComponent = () => {
         التقدم طلب  للحصول على تأشيرة إثيوبية
       </button>
 
+    
+      <div className="video-container">
+        <iframe 
+          className="video" 
+          src="https://www.youtube.com/embed/P71RW0klXt4" 
+          title="YouTube video player" 
+          frameBorder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowFullScreen>
+        </iframe>
+      </div>
+
       <br />
 
       <footer>
@@ -86,3 +101,5 @@ const LinksComponent = () => {
 };
 
 export default LinksComponent;
+
+

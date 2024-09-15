@@ -190,4 +190,27 @@ body {
 
 
 
+html[lang="ar"], html[lang="he"] {
+  direction: rtl;
+  text-align: right;
+}
 
+html[lang="en"] {
+  direction: ltr;
+  text-align: left;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.video {
+  width: 100%;
+  height: 450px; /* Adjust height if necessary */
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
