@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import Links from './component/Links';
-import PrivacyPolicy from './component/PrivacyPolicy';
 import NotFound from './NotFound'; 
+
 const App = () => {
   const [currentView, setCurrentView] = useState('home'); 
+
   const renderView = () => {
     switch (currentView) {
       case 'home':
         return <Links />;
-      case 'privacy-policy':
-        return <PrivacyPolicy />;
       default:
         return <NotFound />; 
     }
@@ -18,9 +17,10 @@ const App = () => {
   return (
     <div>
       <nav>
-       
         <button onClick={() => setCurrentView('home')}>Home</button>
-        <button onClick={() => setCurrentView('privacy-policy')}>Privacy Policy</button>
+        <a href="https://nagimbsher.github.io/support/privacy-policy.html" target="_blank" rel="noopener noreferrer">
+          Privacy Policy
+        </a>
       </nav>
       
       {renderView()}
@@ -29,6 +29,40 @@ const App = () => {
 };
 
 export default App;
+
+
+
+// import React, { useState } from 'react';
+// import Links from './component/Links';
+// import PrivacyPolicy from './component/PrivacyPolicy';
+// import NotFound from './NotFound'; 
+// const App = () => {
+//   const [currentView, setCurrentView] = useState('home'); 
+//   const renderView = () => {
+//     switch (currentView) {
+//       case 'home':
+//         return <Links />;
+//       case 'privacy-policy':
+//         return <PrivacyPolicy />;
+//       default:
+//         return <NotFound />; 
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <nav>
+       
+//         <button onClick={() => setCurrentView('home')}>Home</button>
+//         <button onClick={() => setCurrentView('privacy-policy')}>Privacy Policy</button>
+//       </nav>
+      
+//       {renderView()}
+//     </div>
+//   );
+// };
+
+// export default App;
 
 
 
