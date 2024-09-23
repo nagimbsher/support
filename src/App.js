@@ -1,35 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Links from './component/Links';
-import NotFound from './NotFound'; 
 
 const App = () => {
-  const [currentView, setCurrentView] = useState('home'); 
-
-  const renderView = () => {
-    switch (currentView) {
-      case 'home':
-        return <Links />;
-      default:
-        return <NotFound />; 
-    }
-  };
-
   return (
-    <div>
-      <nav>
-        <button onClick={() => setCurrentView('home')}>Home</button>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1 }}>
+        <Links />  {/* Renders your main content */}
+      </div>
+      
+      <footer style={{ marginTop: '20px', textAlign: 'center', padding: '10px 0', backgroundColor: '#f9f9f9' }}>
         <a href="https://nagimbsher.github.io/support/privacy-policy.html" target="_blank" rel="noopener noreferrer">
           Privacy Policy
         </a>
-      </nav>
-      
-      {renderView()}
+      </footer>
     </div>
   );
 };
 
 export default App;
-
 
 
 // import React, { useState } from 'react';
