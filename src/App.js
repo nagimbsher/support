@@ -1,29 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Links from './component/Links';
-import NotFound from './NotFound'; 
 
 const App = () => {
-  const [currentView, setCurrentView] = useState('home'); 
-
-  const renderView = () => {
-    switch (currentView) {
-      case 'home':
-        return <Links />;
-      default:
-        return <NotFound />; 
-    }
-  };
-
   return (
     <div>
       <nav>
-        <button onClick={() => setCurrentView('home')}>Home</button>
         <a href="https://nagimbsher.github.io/support/privacy-policy.html" target="_blank" rel="noopener noreferrer">
           Privacy Policy
         </a>
       </nav>
       
-      {renderView()}
+      <Links />
     </div>
   );
 };
