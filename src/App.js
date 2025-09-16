@@ -1,3 +1,96 @@
+// // src/App.js
+// import React, { useMemo, useState } from 'react';
+// import { Routes, Route, useNavigate } from 'react-router-dom';
+
+// // ✅ use the dropdown navbar (not the off-canvas one)
+// import NavbarDropdown from './component/NavbarDropdown';
+// import Redirector from './component/Redirector';
+// import ServiceCards from './component/ServiceCards';
+
+// import links from './data/linksData';
+// import './App.css'; // keep your main styles (or Modal.css if you need it)
+
+// function Home() {
+//   const [q, setQ] = useState('');
+//   const navigate = useNavigate();
+
+//   const matches = useMemo(() => {
+//     const v = q.trim().toLowerCase();
+//     if (!v) return [];
+//     return links.filter(
+//       l =>
+//         l.label.toLowerCase().includes(v) ||
+//         (l.keywords && l.keywords.toLowerCase().includes(v))
+//     );
+//   }, [q]);
+
+//   const onSubmit = (e) => {
+//     e.preventDefault();
+//     if (matches.length > 0) navigate(`/go/${matches[0].slug}`);
+//   };
+
+//   return (
+//     <main className="home-main">
+//       {/* Search */}
+//       <div className="search-card">
+//         <form className="search-row" onSubmit={onSubmit} role="search" aria-label="بحث عن خدمة">
+//           <input
+//             type="search"
+//             className="search-input"
+//             placeholder="ابحث عن خدمة (مثال: رخصة، جواز، إثيوبيا…)"
+//             value={q}
+//             onChange={(e) => setQ(e.target.value)}
+//           />
+//           <button className="search-button" type="submit" disabled={!q.trim()}>
+//             بحث
+//           </button>
+//           {q && (
+//             <button type="button" className="clear-button" onClick={() => setQ('')}>
+//               مسح
+//             </button>
+//           )}
+//         </form>
+//         {q && matches.length === 0 && <div className="search-hint">لا توجد نتائج مطابقة.</div>}
+//       </div>
+
+//       {/* Services */}
+//       <div className="container py-4">
+//         <ServiceCards />
+//       </div>
+//     </main>
+//   );
+// }
+
+// export default function App() {
+//   return (
+//     <div
+//       id="top"
+//       dir="rtl"
+//       className="bg-light"
+//       style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
+//     >
+//       <NavbarDropdown />
+
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/go/:slug" element={<Redirector />} />
+//       </Routes>
+
+//       <footer className="mt-auto text-center py-3 bg-white border-top">
+//         <a
+//           href="https://nagimbsher.github.io/support/privacy-policy.html"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Privacy Policy
+//         </a>
+//       </footer>
+//     </div>
+//   );
+// }
+
+
+
 import React, { useMemo, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import NavbarMobileMenu from './component/NavbarMobileMenu';
