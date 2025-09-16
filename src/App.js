@@ -1,23 +1,240 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import NavbarMobileMenu from './component/NavbarMobileMenu';
+import Redirector from './component/Redirector';
 import Links from './component/Links';
+import ServiceCards from './component/ServiceCards';
 
-const App = () => {
+import links from './data/linksData';
+import './Modal.css';
+
+function Home() {
+  const [q, setQ] = useState('');
+  const navigate = useNavigate();
+
+  const matches = useMemo(() => {
+    const v = q.trim().toLowerCase();
+    if (!v) return [];
+    return links.filter(l =>
+      l.label.toLowerCase().includes(v) ||
+      (l.keywords && l.keywords.toLowerCase().includes(v))
+    );
+  }, [q]);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (matches.length > 0) {
+      navigate(`/go/${matches[0].slug}`);
+    }
+  };
+
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <div style={{ flex: 1 }}>
-        <Links />  {/* Renders your main content */}
+    <main className="home-main">
+      <div className="search-card">
+        <form className="search-row" onSubmit={onSubmit} role="search" aria-label="بحث عن خدمة">
+          <input
+            type="search"
+            className="search-input"
+            placeholder="ابحث عن خدمة (مثال: رخصة، جواز، إثيوبيا…)"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+          />
+          <button className="search-button" type="submit" disabled={!q.trim()}>
+            بحث
+          </button>
+          {q && (
+            <button
+              type="button"
+              className="clear-button"
+              onClick={() => setQ('')}
+            >
+              مسح
+            </button>
+          )}
+        </form>
+        {q && matches.length === 0 && (
+          <div className="search-hint">لا توجد نتائج مطابقة.</div>
+        )}
       </div>
-      
-      <footer style={{ marginTop: '20px', textAlign: 'center', padding: '10px 0', backgroundColor: '#f9f9f9' }}>
-        <a href="https://nagimbsher.github.io/support/privacy-policy.html" target="_blank" rel="noopener noreferrer">
+
+      {/* Content below the search */}
+      <div className="container py-4">
+         <ServiceCards />
+        <Links />
+      </div>
+    </main>
+  );
+}
+
+export default function App() {
+  return (
+    <div
+      id="top"
+      dir="rtl"
+      className="bg-light"
+      style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
+    >
+      <NavbarMobileMenu />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/go/:slug" element={<Redirector />} />
+      </Routes>
+
+      <footer className="mt-auto text-center py-3 bg-white border-top">
+        <a
+          href="https://nagimbsher.github.io/support/privacy-policy.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Privacy Policy
         </a>
       </footer>
     </div>
   );
-};
+}
 
-export default App;
+
+// import React, { useMemo, useState } from 'react';
+// import { Routes, Route, useNavigate } from 'react-router-dom';
+// import NavbarMobileMenu from './component/NavbarMobileMenu';
+// import Redirector from './component/Redirector';
+// import Links from './component/Links';
+// import links from './data/linksData';
+// import './Modal.css';
+
+// function Home() {
+//   const [q, setQ] = useState('');
+//   const navigate = useNavigate();
+
+//   const matches = useMemo(() => {
+//     const v = q.trim().toLowerCase();
+//     if (!v) return [];
+//     return links.filter(l =>
+//       l.label.toLowerCase().includes(v) ||
+//       (l.keywords && l.keywords.toLowerCase().includes(v))
+//     );
+//   }, [q]);
+
+//   const onSubmit = (e) => {
+//     e.preventDefault();
+//     if (matches.length > 0) {
+//       navigate(`/go/${matches[0].slug}`);
+//     }
+//   };
+
+//   return (
+//     <>
+//       {/* Search bar */}
+//       <header className="bg-white border-bottom">
+//         <div className="container py-3">
+//           <form className="input-group" onSubmit={onSubmit} role="search" aria-label="بحث عن خدمة">
+//             <input
+//               type="search"
+//               className="form-control form-control-lg"
+//               placeholder="ابحث عن خدمة (مثال: رخصة، جواز، إثيوبيا…)"
+//               value={q}
+//               onChange={(e) => setQ(e.target.value)}
+//             />
+//             <button className="btn btn-primary btn-lg" type="submit" disabled={!q.trim()}>بحث</button>
+//             {q && <button type="button" className="btn btn-outline-secondary btn-lg" onClick={() => setQ('')}>مسح</button>}
+//           </form>
+//           {q && matches.length === 0 && <div className="text-muted mt-2">لا توجد نتائج مطابقة.</div>}
+//         </div>
+//       </header>
+
+//       {/* Main content (video only) */}
+//       <main className="flex-grow-1">
+//         <div className="container py-4">
+//           <Links />
+//         </div>
+//       </main>
+//     </>
+//   );
+// }
+
+// export default function App() {
+//   return (
+//     <div id="top" dir="rtl" className="bg-light" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+//       <NavbarMobileMenu />
+
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/go/:slug" element={<Redirector />} />
+//       </Routes>
+
+//       <footer className="mt-auto text-center py-3 bg-white border-top">
+//         <a href="https://nagimbsher.github.io/support/privacy-policy.html" target="_blank" rel="noopener noreferrer">
+//           Privacy Policy
+//         </a>
+//       </footer>
+//     </div>
+//   );
+// }
+
+
+// import React from 'react';
+// import NavbarLight from './component/NavbarLight'; // make sure this path matches your file
+
+// const App = () => {
+//   return (
+//     <div
+//       id="top"
+//       dir="rtl" // Arabic-friendly layout
+//       style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
+//     >
+//       {/* Light navbar */}
+      
+
+//       {/* Main content */}
+//       <main style={{ flex: 1 }}>
+//           <NavbarLight />
+//       </main>
+   
+//       {/* Footer */}
+//       <footer
+//         style={{
+//           marginTop: 'auto',
+//           textAlign: 'center',
+//           padding: '10px 0',
+//           backgroundColor: '#f9f9f9'
+//         }}
+//       >
+//         <a
+//           href="https://nagimbsher.github.io/support/privacy-policy.html"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Privacy Policy
+//         </a>
+//       </footer>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+// import React from 'react';
+// import Links from './component/Links';
+
+// const App = () => {
+//   return (
+//     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+//       <div style={{ flex: 1 }}>
+//         <Links />  {/* Renders your main content */}
+//       </div>
+      
+//       <footer style={{ marginTop: '20px', textAlign: 'center', padding: '10px 0', backgroundColor: '#f9f9f9' }}>
+//         <a href="https://nagimbsher.github.io/support/privacy-policy.html" target="_blank" rel="noopener noreferrer">
+//           Privacy Policy
+//         </a>
+//       </footer>
+//     </div>
+//   );
+// };
+
+// export default App;
 
 
 // import React, { useState } from 'react';
