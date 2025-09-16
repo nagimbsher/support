@@ -310,26 +310,6 @@ body {
 
 
 
-
-
-/* Navbar brand styling */
-.navbar-brand {
-  font-weight: 600;
-  color: #000; /* keep it readable */
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Remove the default blue outline when clicked/focused */
-.navbar-brand:focus,
-.navbar-brand:active {
-  outline: none;
-  box-shadow: none;
-}
-* subtle blue tint */
-
 /* === Navbar Brand === */
 .navbar-brand {
   font-weight: 600;
@@ -340,31 +320,45 @@ body {
   gap: 6px;
 }
 
-/* Remove ugly default outline */
+/* Remove default outline on mouse click */
 .navbar-brand:focus,
 .navbar-brand:active {
   outline: none;
   box-shadow: none;
 }
 
-/* Custom pretty focus */
-
+/* Accessible focus style (keyboard) */
+.navbar-brand:focus-visible {
+  outline: 2px solid #f9d423;      /* gold to match background */
+  outline-offset: 4px;
+  border-radius: 6px;
+  background-color: rgba(249, 212, 35, 0.12);
+}
 
 /* === Navbar Toggler === */
 .navbar-toggler {
-  border: none; /* remove Bootstrap default border */
+  border: none;                     /* remove Bootstrap border */
   background: transparent;
   padding: 0.5rem;
   border-radius: 6px;
 }
 
-/* Remove default outline */
 .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: none;
   box-shadow: none;
-
 }
+
+.navbar-toggler:focus-visible {
+  outline: 2px solid #f9d423;
+  outline-offset: 4px;
+  border-radius: 6px;
+  background-color: rgba(249, 212, 35, 0.12);
+}
+
+
+
+
 
 /* ===== Service cards v2 — Gold glass style ===== */
 :root{
