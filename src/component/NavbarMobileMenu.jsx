@@ -31,7 +31,7 @@ export default function NavbarMobileMenu() {
     <nav className="navbar navbar-light bg-white border-bottom sticky-top" dir="rtl">
       <div className="container-fluid">
         <a className="navbar-brand d-flex align-items-center gap-2" href="#top">
-          <FontAwesomeIcon icon={faHandshake} className="text-primary" />
+          <FontAwesomeIcon icon={faHandshake} className="brand-icon" />
           <span className="fw-semibold">اهلا وسهلا</span>
         </a>
 
