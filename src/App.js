@@ -90,7 +90,6 @@
 // }
 
 
-
 import React, { useMemo, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import NavbarMobileMenu from './component/NavbarMobileMenu';
@@ -100,17 +99,20 @@ import ServiceCards from './component/ServiceCards';
 
 import links from './data/linksData';
 import './Modal.css';
+import { useLanguage } from './context/LanguageContext'; // ⬅️ use language
 
 function Home() {
   const [q, setQ] = useState('');
   const navigate = useNavigate();
+  const { lang } = useLanguage();
 
   const matches = useMemo(() => {
     const v = q.trim().toLowerCase();
     if (!v) return [];
-    return links.filter(l =>
-      l.label.toLowerCase().includes(v) ||
-      (l.keywords && l.keywords.toLowerCase().includes(v))
+    return links.filter(
+      l =>
+        l.label.toLowerCase().includes(v) ||
+        (l.keywords && l.keywords.toLowerCase().includes(v))
     );
   }, [q]);
 
@@ -121,19 +123,46 @@ function Home() {
     }
   };
 
+  // ✅ translations
+  const t = {
+    ar: {
+      placeholder: 'ابحث عن خدمة (مثال: رخصة، جواز، إثيوبيا…)',
+      search: 'بحث',
+      clear: 'مسح',
+      noResults: 'لا توجد نتائج مطابقة.',
+    },
+    he: {
+      placeholder: 'חפש שירות (לדוגמה: רישיון, דרכון, אתיופיה…)',
+      search: 'חפש',
+      clear: 'נקה',
+      noResults: 'לא נמצאו תוצאות מתאימות.',
+    },
+    en: {
+      placeholder: 'Search for a service (e.g., license, passport, Ethiopia…)',
+      search: 'Search',
+      clear: 'Clear',
+      noResults: 'No matching results.',
+    },
+  }[lang];
+
   return (
     <main className="home-main">
       <div className="search-card">
-        <form className="search-row" onSubmit={onSubmit} role="search" aria-label="بحث عن خدمة">
+        <form
+          className="search-row"
+          onSubmit={onSubmit}
+          role="search"
+          aria-label={t.search}
+        >
           <input
             type="search"
             className="search-input"
-            placeholder="ابحث عن خدمة (مثال: رخصة، جواز، إثيوبيا…)"
+            placeholder={t.placeholder}
             value={q}
             onChange={(e) => setQ(e.target.value)}
           />
           <button className="search-button" type="submit" disabled={!q.trim()}>
-            بحث
+            {t.search}
           </button>
           {q && (
             <button
@@ -141,18 +170,18 @@ function Home() {
               className="clear-button"
               onClick={() => setQ('')}
             >
-              مسح
+              {t.clear}
             </button>
           )}
         </form>
         {q && matches.length === 0 && (
-          <div className="search-hint">لا توجد نتائج مطابقة.</div>
+          <div className="search-hint">{t.noResults}</div>
         )}
       </div>
 
       {/* Content below the search */}
       <div className="container py-4">
-         <ServiceCards />
+        <ServiceCards />
         <Links />
       </div>
     </main>
@@ -160,10 +189,12 @@ function Home() {
 }
 
 export default function App() {
+  const { lang } = useLanguage();
+
   return (
     <div
       id="top"
-      dir="rtl"
+      dir={lang === 'en' ? 'ltr' : 'rtl'} // ✅ switch automatically
       className="bg-light"
       style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
     >
@@ -186,6 +217,104 @@ export default function App() {
     </div>
   );
 }
+
+
+
+// import React, { useMemo, useState } from 'react';
+// import { Routes, Route, useNavigate } from 'react-router-dom';
+// import NavbarMobileMenu from './component/NavbarMobileMenu';
+// import Redirector from './component/Redirector';
+// import Links from './component/Links';
+// import ServiceCards from './component/ServiceCards';
+
+// import links from './data/linksData';
+// import './Modal.css';
+
+// function Home() {
+//   const [q, setQ] = useState('');
+//   const navigate = useNavigate();
+
+//   const matches = useMemo(() => {
+//     const v = q.trim().toLowerCase();
+//     if (!v) return [];
+//     return links.filter(l =>
+//       l.label.toLowerCase().includes(v) ||
+//       (l.keywords && l.keywords.toLowerCase().includes(v))
+//     );
+//   }, [q]);
+
+//   const onSubmit = (e) => {
+//     e.preventDefault();
+//     if (matches.length > 0) {
+//       navigate(`/go/${matches[0].slug}`);
+//     }
+//   };
+
+//   return (
+//     <main className="home-main">
+//       <div className="search-card">
+//         <form className="search-row" onSubmit={onSubmit} role="search" aria-label="بحث عن خدمة">
+//           <input
+//             type="search"
+//             className="search-input"
+//             placeholder="ابحث عن خدمة (مثال: رخصة، جواز، إثيوبيا…)"
+//             value={q}
+//             onChange={(e) => setQ(e.target.value)}
+//           />
+//           <button className="search-button" type="submit" disabled={!q.trim()}>
+//             بحث
+//           </button>
+//           {q && (
+//             <button
+//               type="button"
+//               className="clear-button"
+//               onClick={() => setQ('')}
+//             >
+//               مسح
+//             </button>
+//           )}
+//         </form>
+//         {q && matches.length === 0 && (
+//           <div className="search-hint">لا توجد نتائج مطابقة.</div>
+//         )}
+//       </div>
+
+//       {/* Content below the search */}
+//       <div className="container py-4">
+//          <ServiceCards />
+//         <Links />
+//       </div>
+//     </main>
+//   );
+// }
+
+// export default function App() {
+//   return (
+//     <div
+//       id="top"
+//       dir="rtl"
+//       className="bg-light"
+//       style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
+//     >
+//       <NavbarMobileMenu />
+
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/go/:slug" element={<Redirector />} />
+//       </Routes>
+
+//       <footer className="mt-auto text-center py-3 bg-white border-top">
+//         <a
+//           href="https://nagimbsher.github.io/support/privacy-policy.html"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Privacy Policy
+//         </a>
+//       </footer>
+//     </div>
+//   );
+// }
 
 
 // import React, { useMemo, useState } from 'react';
