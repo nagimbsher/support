@@ -67,6 +67,24 @@ const links = [
     group: 'gov',
     keywords: 'طريق 6 جنوب اشتراك دفع'
   },
+  // بلدية تل أبيب
+{ 
+  slug: 'mydigitel',
+  label: 'MyDigitel – خدمات بلدية تل أبيب',
+  url: 'https://mydigitel.tel-aviv.gov.il/?utm_source=Main_Button_Heb&utm_medium=TLV_site&utm_campaign=Official_launch&utm_id=Official_launch',
+  group: 'gov',
+  keywords: 'بلدية تل أبيب mydigitel digitel خدمات بلدية'
+},
+
+// وزارة الداخلية – تسجيل / فحص مسبق
+{
+  slug: 'govil-prereg',
+  label: 'فحص / تسجيل مسبق – وزارة الداخلية',
+  url: 'https://login.gov.il/nidp/saml2/sso?id=preRegCheck&sid=0&option=credential&sid=0',
+  group: 'gov',
+  keywords: 'وزارة الداخلية تسجيل مسبق فحص gov.il login'
+},
+
 
   // تأشيرات
   {
