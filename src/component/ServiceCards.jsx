@@ -1,49 +1,68 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import links from "../data/linksData";
+import { useLanguage } from "../context/LanguageContext";
+import "../App.css";
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import links from '../data/linksData';
-import '../App.css';
+const WHATSAPP = "972545946241";
+
+const getLabel = (item, lang) => item.translations?.[lang] || item.label;
+
+const replaceText = (text, values) =>
+  Object.entries(values).reduce(
+    (result, [key, value]) => result.replaceAll(`{${key}}`, value),
+    text
+  );
 
 export default function ServiceCards() {
-  // ✅ your WhatsApp number (no +)
-  const WHATSAPP = '972545946241';
+  const { lang, t } = useLanguage();
 
   const payForMe = (item) => {
-    const text =
-`مرحبًا، أريد خدمة التقديم:
-• الخدمة: ${item.label}
-• السعر: 250 ₪
-أوافق أن تتولى التقديم عني.`;
-    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+    const service = getLabel(item, lang);
+    const text = replaceText(t.applyWhatsApp, {
+      service,
+      price: t.price,
+    });
+
+    const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const groups = [
-    { id: 'gov',   title: 'خدمات حكومية' },
-    { id: 'visas', title: 'تأشيرات' },
+    { id: "gov", title: t.government },
+    { id: "visas", title: t.visas },
   ];
 
   return (
-    <div id="services" className="cards-container" dir="rtl">
-      {groups.map(g => {
-        const items = links.filter(l => l.group === g.id);
+    <div id="services" className="cards-container">
+      {groups.map((group) => {
+        const items = links.filter((item) => item.group === group.id);
         if (!items.length) return null;
+
         return (
-          <section key={g.id} className="cards-section">
-            <h3 className="cards-section-title">{g.title}</h3>
+          <section key={group.id} className="cards-section">
+            <h3 className="cards-section-title">{group.title}</h3>
+
             <div className="cards-grid">
-              {items.map(item => (
+              {items.map((item) => (
                 <article className="service-card" key={item.slug}>
-                  <h4 className="service-title">{item.label}</h4>
+                  <h4 className="service-title">{getLabel(item, lang)}</h4>
+
                   <p className="service-desc">
-                    إذا أردت أن أقدّمها لك بسعر ثابت <strong>250 ₪</strong> اضغط الزر الأسود،
-                    أو اضغط الزر الأبيض للتقديم بنفسك مجانًا عبر الموقع الرسمي.
+                    {replaceText(t.serviceDescription, { price: t.price })}
                   </p>
+
                   <div className="card-actions">
                     <Link className="btn-ghost" to={`/go/${item.slug}`}>
-                      قدّم بنفسك (مجّانًا)
+                      {t.applyYourself}
                     </Link>
-                    <button className="btn-apple" onClick={() => payForMe(item)}>
-                       أقدّمها لك — 250 ₪
+
+                    <button
+                      type="button"
+                      className="btn-apple"
+                      onClick={() => payForMe(item)}
+                    >
+                      {t.applyForYou} · {t.price}
                     </button>
                   </div>
                 </article>

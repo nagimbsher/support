@@ -1,134 +1,183 @@
 const links = [
-  // حكومية
   {
-    slug: 'govisit',
-    label: 'حجز دور للهويه او جواز سفر',
-    url: 'https://govisit.gov.il/ar/app/auth/login',
-    group: 'gov',
-    keywords: 'وزارة الداخلية جواز سفر هوية govisit'
+    slug: "govisit",
+    label: "حجز دور للهوية أو جواز سفر",
+    translations: {
+      ar: "حجز دور للهوية أو جواز سفر",
+      he: "קביעת תור לתעודת זהות או דרכון",
+      en: "Book an appointment for an ID card or passport",
+    },
+    url: "https://govisit.gov.il/ar/app/auth/login",
+    group: "gov",
+    keywords: "وزارة الداخلية جواز سفر هوية govisit משרד הפנים passport identity",
   },
   {
-    slug: 'btl-625',
-    label: '‏املأ التامين الوطني لي هوية جديدة',
-    url: 'https://www.btl.gov.il/%D7%98%D7%A4%D7%A1%D7%99%D7%9D%20%D7%95%D7%90%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D/forms/insurance_forms/Pages/625%20-%20%D7%A9%D7%90%D7%9C%D7%95%D7%9F%20%D7%9C%D7%A7%D7%91%D7%99%D7%A2%D7%AA%20%D7%AA%D7%95%D7%A9%D7%91%D7%95%D7%AA%20-%20%D7%91%D7%A2%D7%9C%D7%99%20%D7%A9%D7%A8%D7%94%20%D7%9C%D7%AA%D7%95%D7%A9%D7%91%20%D7%90%D7%A8%D7%A2%D7%99.aspx',
-    group: 'gov',
-    keywords: 'تأمين وطني رقم هوية btl'
+    slug: "btl-625",
+    label: "املأ التأمين الوطني للهوية الجديدة",
+    translations: {
+      ar: "املأ التأمين الوطني للهوية الجديدة",
+      he: "מילוי טופס ביטוח לאומי לתעודת זהות חדשה",
+      en: "Fill out the National Insurance form for a new ID",
+    },
+    url: "https://www.btl.gov.il/Arabic%20HomePage/Pages/default.aspx",
+    group: "gov",
+    keywords: "تأمين وطني رقم هوية btl ביטוח לאומי national insurance",
   },
   {
-    slug: 'license-new',
-    label: 'الحصول على رخصة قيادة / توفس يروك',
-    url: 'https://www.gov.il/ar/service/apply_for_new_driver_drivers_license',
-    group: 'gov',
-    keywords: 'رخصة قيادة توفس يروك משרד התחבורה'
+    slug: "license-new",
+    label: "الحصول على رخصة قيادة / توفس يروك",
+    translations: {
+      ar: "الحصول على رخصة قيادة / توفس يروك",
+      he: "הוצאת רישיון נהיגה / טופס ירוק",
+      en: "Apply for a driving license / Green Form",
+    },
+    url: "https://www.gov.il/ar/service/apply_for_new_driver_drivers_license",
+    group: "gov",
+    keywords: "رخصة قيادة توفس يروك משרד התחבורה driving license green form",
   },
   {
-    slug: 'theory',
-    label: '‏حجز دور للامتحان / حجز دور للتؤوريا',
-    url: 'https://www.theorytest.org.il/',
-    group: 'gov',
-    keywords: 'امتحان سياقة تؤوريا نظرية'
+    slug: "theory",
+    label: "حجز دور للامتحان / حجز دور للتؤوريا",
+    translations: {
+      ar: "حجز دور للامتحان / حجز دور للتؤوريا",
+      he: "קביעת תור למבחן תאוריה",
+      en: "Book a theory test appointment",
+    },
+    url: "https://www.theorytest.org.il/",
+    group: "gov",
+    keywords: "امتحان سياقة تؤوريا نظرية מבחן תאוריה theory test",
   },
   {
-    slug: 'license-renew',
-    label: 'تجديد رخصة القيادة او استخراج الرخصة بعد نجاح',
-    url: 'https://ecom.gov.il/voucherspa/input/209?language=ar',
-    group: 'gov',
-    keywords: 'تجديد رخصة دفع رسوم'
-  },
-
-  // جديد
-  {
-    slug: 'asylum-application',
-    label: 'طلب اللجوء',
-    url: 'https://www.gov.il/ar/service/apply_for_asylum_in_israel',
-    group: 'gov',
-    keywords: 'طلب لجوء وزارة الداخلية حماية لاجئين'
+    slug: "license-renew",
+    label: "تجديد رخصة القيادة أو استخراج الرخصة بعد النجاح",
+    translations: {
+      ar: "تجديد رخصة القيادة أو استخراج الرخصة بعد النجاح",
+      he: "חידוש רישיון נהיגה או הפקת הרישיון לאחר מעבר המבחן",
+      en: "Renew a driving license or issue the license after passing",
+    },
+    url: "https://ecom.gov.il/voucherspa/input/209?language=ar",
+    group: "gov",
+    keywords: "تجديد رخصة دفع رسوم חידוש רישיון driving license renewal",
   },
   {
-    slug: 'egged-tickets',
-    label: 'طلب تذاكر (Egged)',
-    url: 'https://prodapps.egged.co.il/reserved-seats-app/?language=ar',
-    group: 'gov',
-    keywords: 'ايجد Egged حافلات تذاكر حجز مقاعد'
-  },
-
-  // طرق ودفع
-  {
-    slug: 'kvish6-north',
-    label: 'فتح اشتراك طريق 6 شمال',
-    url: 'https://6cn.co.il/register',
-    group: 'gov',
-    keywords: 'طريق 6 شمال اشتراك 6cn'
+    slug: "asylum-application",
+    label: "طلب اللجوء",
+    translations: {
+      ar: "طلب اللجوء",
+      he: "הגשת בקשת מקלט",
+      en: "Apply for asylum",
+    },
+    url: "https://www.gov.il/ar/service/apply_for_asylum_in_israel",
+    group: "gov",
+    keywords: "طلب لجوء وزارة الداخلية حماية لاجئين בקשת מקלט asylum",
   },
   {
-    slug: 'kvish6-south',
-    label: 'فتح اشتراك طريق 6 جنوب',
-    url: 'https://service.kvish6.co.il/#/website/customer-area/registration?x=1&Button=Strip',
-    group: 'gov',
-    keywords: 'طريق 6 جنوب اشتراك دفع'
-  },
-  // بلدية تل أبيب
-{ 
-  slug: 'mydigitel',
-  label: 'MyDigitel – خدمات بلدية تل أبيب',
-  url: 'https://mydigitel.tel-aviv.gov.il/?utm_source=Main_Button_Heb&utm_medium=TLV_site&utm_campaign=Official_launch&utm_id=Official_launch',
-  group: 'gov',
-  keywords: 'بلدية تل أبيب mydigitel digitel خدمات بلدية'
-},
-
-// وزارة الداخلية – تسجيل / فحص مسبق
-{
-  slug: 'govil-prereg',
-  label: 'فحص / تسجيل مسبق – وزارة الداخلية',
-  url: 'https://login.gov.il/nidp/saml2/sso?id=preRegCheck&sid=0&option=credential&sid=0',
-  group: 'gov',
-  keywords: 'وزارة الداخلية تسجيل مسبق فحص gov.il login'
-},
-
-
-  // تأشيرات
-  {
-    slug: 'visa-ethiopia',
-    label: 'التقدم طلب للحصول على تأشيرة إثيوبية',
-    url: 'https://www.evisa.gov.et/',
-    group: 'visas',
-    keywords: 'تأشيرة اثيوبيا evisa ethiopia'
+    slug: "egged-tickets",
+    label: "طلب تذاكر Egged",
+    translations: {
+      ar: "طلب تذاكر Egged",
+      he: "הזמנת כרטיסים Egged",
+      en: "Book Egged tickets",
+    },
+    url: "https://prodapps.egged.co.il/reserved-seats-app/?language=ar",
+    group: "gov",
+    keywords: "ايجد Egged حافلات تذاكر حجز مقاعد אגד bus tickets",
   },
   {
-    slug: 'visa-uganda',
-    label: 'التقدم طلب للحصول على تأشيرة أوغندية',
-    url: 'https://visas.immigration.go.ug/',
-    group: 'visas',
-    keywords: 'تأشيرة اوغندا uganda visa'
+    slug: "kvish6-north",
+    label: "فتح اشتراك طريق 6 شمال",
+    translations: {
+      ar: "فتح اشتراك طريق 6 شمال",
+      he: "פתיחת מנוי לכביש 6 צפון",
+      en: "Open a Route 6 North subscription",
+    },
+    url: "https://6cn.co.il/register",
+    group: "gov",
+    keywords: "طريق 6 شمال اشتراك 6cn כביש 6 north",
   },
   {
-    slug: 'visa-rwanda',
-    label: 'التقدم طلب للحصول على تأشيرة رواندا',
-    url: 'https://www.migration.gov.rw/',
-    group: 'visas',
-    keywords: 'تأشيرة رواندا rwanda'
-  }
+    slug: "kvish6-south",
+    label: "فتح اشتراك طريق 6 جنوب",
+    translations: {
+      ar: "فتح اشتراك طريق 6 جنوب",
+      he: "פתיחת מנוי לכביש 6 דרום",
+      en: "Open a Route 6 South subscription",
+    },
+    url: "https://service.kvish6.co.il/#/website/customer-area/registration?x=1&Button=Strip",
+    group: "gov",
+    keywords: "طريق 6 جنوب اشتراك دفع כביש 6 south",
+  },
+  {
+    slug: "mydigitel",
+    label: "MyDigitel – خدمات بلدية تل أبيب",
+    translations: {
+      ar: "MyDigitel – خدمات بلدية تل أبيب",
+      he: "MyDigitel – שירותי עיריית תל אביב",
+      en: "MyDigitel – Tel Aviv Municipality services",
+    },
+    url: "https://mydigitel.tel-aviv.gov.il/?utm_source=Main_Button_Heb&utm_medium=TLV_site&utm_campaign=Official_launch&utm_id=Official_launch",
+    group: "gov",
+    keywords: "بلدية تل أبيب mydigitel digitel خدمات بلدية עירייה municipality",
+  },
+  {
+    slug: "govil-prereg",
+    label: "فحص / تسجيل مسبق – وزارة الداخلية",
+    translations: {
+      ar: "فحص / تسجيل مسبق – وزارة الداخلية",
+      he: "בדיקה / רישום מוקדם – משרד הפנים",
+      en: "Pre-registration check – Ministry of Interior",
+    },
+    url: "https://login.gov.il/nidp/saml2/sso?id=preRegCheck&sid=0&option=credential&sid=0",
+    group: "gov",
+    keywords: "وزارة الداخلية تسجيل مسبق فحص gov.il login משרד הפנים pre registration",
+  },
+  {
+    slug: "visa-ethiopia",
+    label: "التقدم بطلب للحصول على تأشيرة إثيوبية",
+    translations: {
+      ar: "التقدم بطلب للحصول على تأشيرة إثيوبية",
+      he: "הגשת בקשה לוויזה לאתיופיה",
+      en: "Apply for an Ethiopian visa",
+    },
+    url: "https://www.evisa.gov.et/",
+    group: "visas",
+    keywords: "تأشيرة اثيوبيا evisa ethiopia ויזה Ethiopia visa",
+  },
+  {
+    slug: "visa-uganda",
+    label: "التقدم بطلب للحصول على تأشيرة أوغندية",
+    translations: {
+      ar: "التقدم بطلب للحصول على تأشيرة أوغندية",
+      he: "הגשת בקשה לוויזה לאוגנדה",
+      en: "Apply for a Ugandan visa",
+    },
+    url: "https://visas.immigration.go.ug/",
+    group: "visas",
+    keywords: "تأشيرة اوغندا uganda visa ויזה Uganda",
+  },
+  {
+    slug: "visa-rwanda",
+    label: "التقدم بطلب للحصول على تأشيرة رواندا",
+    translations: {
+      ar: "التقدم بطلب للحصول على تأشيرة رواندا",
+      he: "הגשת בקשה לוויזה לרואנדה",
+      en: "Apply for a Rwandan visa",
+    },
+    url: "https://www.migration.gov.rw/",
+    group: "visas",
+    keywords: "تأشيرة رواندا rwanda ויזה Rwanda",
+  },
+  {
+  slug: "car-license-renewal",
+  group: "gov",
+  label: "חידוש רישיון רכב",
+  translations: {
+    he: "חידוש רישיון רכב",
+    ar: "تجديد رخصة المركبة",
+    en: "Car License Renewal",
+  },
+  url: "https://www.gov.il/he/service/car_licence_renewal",
+}
 ];
 
 export default links;
-
-
-// const links = [
-//   // حكومية
-//   { slug: 'govisit', label: 'حجز دور للهويه او جواز سفر', url: 'https://govisit.gov.il/ar/app/auth/login', group: 'gov', keywords: 'وزارة الداخلية جواز سفر هوية govisit' },
-//   { slug: 'btl-625', label: '‏املأ التامين الوطني لي هوية جديدة', url: 'https://www.btl.gov.il/%D7%98%D7%A4%D7%A1%D7%99%D7%9D%20%D7%95%D7%90%D7%99%D7%A9%D7%95%D7%A8%D7%99%D7%9D/forms/insurance_forms/Pages/625%20-%20%D7%A9%D7%90%D7%9C%D7%95%D7%9F%20%D7%9C%D7%A7%D7%91%D7%99%D7%A2%D7%AA%20%D7%AA%D7%95%D7%A9%D7%91%D7%95%D7%AA%20-%20%D7%91%D7%A2%D7%9C%D7%99%20%D7%90%D7%A9%D7%A8%D7%94%20%D7%9C%D7%AA%D7%95%D7%A9%D7%91%20%D7%90%D7%A8%D7%A2%D7%99.aspx', group: 'gov', keywords: 'تأمين وطني رقم هوية btl' },
-//   { slug: 'license-new', label: 'الحصول على رخصة قيادة/ توفس يروك', url: 'https://www.gov.il/ar/service/apply_for_new_driver_drivers_license', group: 'gov', keywords: 'رخصة قيادة توفس يروك משרד התחבורה' },
-//   { slug: 'theory', label: '‏حجز دور للامتحان / حجز دور للتؤوريا', url: 'https://www.theorytest.org.il/', group: 'gov', keywords: 'امتحان سياقة تؤوريا نظرية' },
-//   { slug: 'license-renew', label: 'تجديد رخصة القيادة او استخراج الرخصة بعد نجاح', url: 'https://ecom.gov.il/voucherspa/input/209?language=ar', group: 'gov', keywords: 'تجديد رخصة دفع رسوم' },
-
-//   // ✅ جديد
-//   { slug: 'asylum-application', label: 'طلب اللجوء', url: 'https://www.gov.il/ar/service/apply_for_asylum_in_israel', group: 'gov', keywords: 'طلب لجوء وزارة الداخلية حماية لاجئين' },
-//   { slug: 'egged-tickets', label: 'طلب تذاكر (Egged)‏', url: 'https://prodapps.egged.co.il/reserved-seats-app/?language=ar', group: 'gov', keywords: 'ايجد Egged حافلات تذاكر حجز مقاعد' },
-
-//   // تأشيرات
-//   { slug: 'visa-ethiopia', label: 'التقدم طلب للحصول على تأشيرة إثيوبية', url: 'https://www.evisa.gov.et/', group: 'visas', keywords: 'تأشيرة اثيوبيا evisa ethiopia' },
-//   { slug: 'visa-uganda', label: 'التقدم طلب للحصول على تأشيرة أوغندية', url: 'https://visas.immigration.go.ug/', group: 'visas', keywords: 'تأشيرة اوغندا uganda visa' },
-//   { slug: 'visa-rwanda', label: 'التقدم طلب للحصول على تأشيرة رواندا', url: 'https://www.migration.gov.rw/', group: 'visas', keywords: 'تأشيرة رواندا rwanda' },
-// ];
-
-// export default links;
